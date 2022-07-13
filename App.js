@@ -6,9 +6,7 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      
       <CallingScreen />
-
       <StatusBar barStyle={'dark-content'} />
     </SafeAreaView>
   );
