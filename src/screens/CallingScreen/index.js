@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
-
+import { Ionicons, Feather, MaterialIcons } from '@expo/vector-icons';
+import CallActionBox from '../../components/CallActionBox';
 
 export default function CallingScreen() {
     return (
@@ -10,9 +11,7 @@ export default function CallingScreen() {
                 <Text style={styles.phoneNumber}>ringing +91 98765 43210</Text>
             </View>
 
-            <View style={styles.buttonsContainer}>
-                <Text>Icons</Text>
-            </View>
+            <CallActionBox />
 
         </View>
     );
@@ -48,10 +47,18 @@ const styles = StyleSheet.create({
 
     buttonsContainer: {
         backgroundColor: '#333333',
-        padding: 10,
+        padding: 20,
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
         width: '100%',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+    },
+
+    iconButton: {
+        backgroundColor: '#4a4a4a',
+        padding: 15,
+        borderRadius: 50,
     },
 
 });

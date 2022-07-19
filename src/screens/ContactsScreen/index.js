@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, TextInput } from 'react-native';
 import dummyContacts from '../../../assets/data/contacts.json';
 
-const ContactsScreen = () => {
+export default function ContactsScreen() {
 
     const [ searchTerm, setSearchTerm ] = useState('');
     const [ filteredContacts, setFilteredContacts ] = useState(dummyContacts);
@@ -68,5 +68,3 @@ const styles = StyleSheet.create({
 
 
 });
-
-export default ContactsScreen;
