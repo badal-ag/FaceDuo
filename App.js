@@ -8,9 +8,7 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      
-      <CallScreen />
-
+      <CallingScreen />
       <StatusBar barStyle={'dark-content'} />
     </SafeAreaView>
   );
