@@ -7,7 +7,6 @@ export default function CallScreen() {
         <View style={styles.page}>
             <View style={styles.cameraPreview} />
             
-        
             <CallActionBox />
         </View>
     );
@@ -22,8 +21,8 @@ const styles = StyleSheet.create({
 
     cameraPreview: {
         width: 100,
-        height: 100,
-        backgroundColor: 'red',
+        height: 150,
+        backgroundColor: '#ffff6e',
 
         borderRadius: 10,
 

@@ -1,25 +1,48 @@
-import { View, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, StyleSheet, Pressable } from 'react-native';
 import { Ionicons, Feather, MaterialIcons } from '@expo/vector-icons';
 
 export default function CallActionBox() {
+
+    const [ isCameraOn, setIsCameraOn ] = useState(true); 
+    const [ isMicOn, setIsMicOn ] = useState(true); 
+
+    const onReverseCamera = () => {
+        console.warn('onReverseCamera')
+    }
+
+    const onToggleCamera = () => {
+        setIsCameraOn(currentValue => !currentValue);
+    }
+
+    const onToggleMicrophone = () => {
+        setIsMicOn(currentValue => !currentValue);
+    }
+
+    const onHangup = () => {
+        console.warn('onHangup')      
+    }
+
+
+
     return (
         <View style={styles.buttonsContainer}>
 
-            <View style={styles.iconButton}>
+            <Pressable onPress={onReverseCamera} style={styles.iconButton}>
                 <Ionicons name="ios-camera-reverse" size={30} color="white" />
-            </View>
+            </Pressable>
 
-            <View style={styles.iconButton}>
-                <Feather name="video-off" size={30} color="white" />
-            </View>
+            <Pressable onPress={onToggleCamera} style={styles.iconButton}>
+                <Feather name={  isCameraOn ? "video-off" : "video" } size={30} color="white" />
+            </Pressable>
 
-            <View style={styles.iconButton}>
-                <Feather name="mic-off" size={30} color="white" />
-            </View>
+            <Pressable onPress={onToggleMicrophone} style={styles.iconButton}>
+                <Feather name={ isMicOn ? "mic-off" : "mic" } size={30} color="white" />
+            </Pressable>
 
-            <View style={[styles.iconButton, {backgroundColor: 'red'}]}>
+            <Pressable onPress={onHangup} style={[styles.iconButton, {backgroundColor: 'red'}]}>
                 <MaterialIcons name="call-end" size={30} color="white" />
-            </View>
+            </Pressable>
 
         </View>
     );
@@ -36,6 +59,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'space-between',
         flexDirection: 'row',
+        paddingBottom: 40,
         marginTop: 'auto',
     },
 
